@@ -10,7 +10,7 @@
 		
 
 <head><meta name="generator" content="Hexo 3.8.0">
-	<title>Hello World</title>
+	<title>tr-sxn</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI">
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class="page-name">当前文章&nbsp;:&nbsp;《Hello World》</p>
+			<p class="page-name">当前文章&nbsp;:&nbsp;《》</p>
 			
 		
 	
@@ -159,20 +159,14 @@
 				<h1 class="am-article-title blog-text-center">
 					
 					
-	
-		<a href="/2018/12/03/hello-world/" itemprop="url">		
-			Hello World		
-		</a>
-	
-
 				</h1>
 
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/12/03/hello-world/" itemprop="url">
-	<time datetime="2018-12-03T02:44:23.639Z" itemprop="datePublished">
-  		2018-12-03
+						<a href="/2018/12/05/httpd安装/" itemprop="url">
+	<time datetime="2018-12-05T01:29:51.281Z" itemprop="datePublished">
+  		2018-12-05
   </time>
 </a>    
 &nbsp;
@@ -187,15 +181,76 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+						<p>[TOC]</p>
+<h3 id="一-yum系统的安装"><a href="#一-yum系统的安装" class="headerlink" title="一.yum系统的安装"></a>一.yum系统的安装</h3><ul>
+<li><p>搜索软件：yum search 软件名或描述</p>
+</li>
+<li><p>安装软件：yum install 软件名</p>
+</li>
+<li><p>卸载软件：yum remove 软件名</p>
+<p>yum search….</p>
+<p>yum install….</p>
+</li>
+</ul>
+<h3 id="二-rpm系统的安装"><a href="#二-rpm系统的安装" class="headerlink" title="二.rpm系统的安装"></a>二.rpm系统的安装</h3><h4 id="rpm查询信息"><a href="#rpm查询信息" class="headerlink" title="rpm查询信息"></a>rpm查询信息</h4><p>​      -q ：仅查询，后面接的软件名称是否有安装；</p>
+<p>​     -qa ：列出所有的，已经安装在本机 Linux 系统上面的所有软件名称；</p>
+<p>​     -ql ：列出该软件所有的文件与目录所在完整文件名 （list）；</p>
+<p>​    -qR ：列出与该软件有关的相依软件所含的文件 （Required 的意思）；</p>
+<h4 id="rpm安装软件"><a href="#rpm安装软件" class="headerlink" title="rpm安装软件"></a>rpm安装软件</h4><p>​      rpm方式安装，可以找到在线的rpm包，也可以下载到本地进行安装</p>
+<p>​      例如 <strong>rpm -ivh</strong> http|<a href="ftp://xxx.com/xx.rpm" target="_blank" rel="noopener">ftp://xxx.com/xx.rpm</a></p>
+<p>​              <strong>rpm -ivh</strong> xx.rpm</p>
+<h3 id="三-源码安装"><a href="#三-源码安装" class="headerlink" title="三.源码安装"></a>三.源码安装</h3><p>开始configure前还是应该仔细阅读源码目录下的README或者INSTALL文件</p>
+<p>yum groupinstall “Development Tools“  -y    </p>
+<p><strong>一组开发者工具包</strong></p>
+<h4 id="configure"><a href="#configure" class="headerlink" title="./configure"></a>./configure</h4><p>解压完成就正式开始安装了,首先跳转到源码的解压目录，configure实际上是一个脚本文件，在当前目录中键入”./configure”,shell就会运行当前目录下的configure脚本.在整个configure过程 </p>
+<h4 id="make"><a href="#make" class="headerlink" title="make"></a>make</h4><p>如果configure过程正确完成，那么在源码目录，会生成相应的Makefile文件，Makefile文件是一组文件依赖关系以及编译链接的相关步骤，make只是一个通用的工具，make会根据Makefile中的规则调用合适的编译器编译所有与当前软件相依赖的源码，生成所有相关的目标文件，最后再使用链接器生成最终的可执行程序:</p>
+<h4 id="make-install"><a href="#make-install" class="headerlink" title="make install"></a>make install</h4><p>当上面两个步骤正确完成，代表着编译链接过程已经完全结束，最后要做的就是将可执行程序安装到正确的位置，在这个步骤，普通用户可能没有相关目录的操作权限，最好临时切换到root。如果在configure阶段没有使用”–prefix=/opt/XXX”指定应用程序的安装目录，那么应用程序一般会被默认安装到/usr/local/bin。</p>
+<h4 id="make-clean和make-uninstall"><a href="#make-clean和make-uninstall" class="headerlink" title="make clean和make uninstall"></a>make clean和make uninstall</h4><p>clean是根据makefile来清理临时文件    uninstall是根据makefile来删除安装后的程序，需要root用户</p>
+<p><strong>例子</strong></p>
+<h3 id="四-安装httpd步骤"><a href="#四-安装httpd步骤" class="headerlink" title="四.安装httpd步骤"></a>四.安装httpd步骤</h3><h4 id="用ssh链接虚拟机"><a href="#用ssh链接虚拟机" class="headerlink" title="用ssh链接虚拟机"></a>用ssh链接虚拟机</h4><p>1.打开termius软件——点击右下角的new host</p>
+<p>2.填写信息，点击右上角save创建</p>
+<p><img src="\github_images\1543924532364.png" alt="1543924532364"></p>
+<p>3.点击centos7就可以运行了</p>
+<h4 id="向虚拟机中拷贝文件"><a href="#向虚拟机中拷贝文件" class="headerlink" title="向虚拟机中拷贝文件"></a>向虚拟机中拷贝文件</h4><p>1.打开cyberduck软件，点击——新建连接——选择SFTP——输入centos的ip</p>
+<p><img src="\github_images\1543924874331.png" alt="1543924874331"></p>
+<p>2.连接以后，将要打开的文件拖进黄鸭子，文件即可上传</p>
+<h4 id="源码安装httpd"><a href="#源码安装httpd" class="headerlink" title="源码安装httpd"></a>源码安装httpd</h4><p>一.安装apache包</p>
+<p>1.在apache官网上下载最新的安装包</p>
+<p>2.用cyberduck拷贝压缩文件后，解压文件（tar zxvf httpd-2.4.37.tar.gz）</p>
+<p><img src="\github_images\1543926539754.png" alt="1543926539754"></p>
+<p>3.cd到解压文件——./configure</p>
+<p><img src="\github_images\1543928846821.png" alt="1543928846821"></p>
+<p>4.寻找apr包，并安装</p>
+<p><img src="\github_images\1543929112212.png" alt="1543929112212"></p>
+<p>5.再./configure看看还需要什么包</p>
+<p><img src="\github_images\1543929213883.png" alt="1543929213883"></p>
+<p>6.寻找并安装pcre包</p>
+<p><img src="\github_images\1543929384129.png" alt="1543929384129"></p>
+<p>7.再次执行./configure，成功</p>
+<p>8.执行make</p>
+<p>9.执行makeinstall</p>
+<p>10.启动apache（/usr/local/apache2/bin/apachectl start）发现报错（应该修改配置文件）</p>
+<p><img src="\github_images\1543929929207.png" alt="1543929929207"></p>
+<p>11.更改配置文件</p>
+<p>   vim进入配置文件</p>
+<p><img src="\github_images\1543930328483.png" alt="1543930328483"></p>
+<p>  搜索ServerName</p>
+<p><img src="\github_images\1543930140438.png" alt="1543930140438"></p>
+<p>找到ServerName，去掉#</p>
+<p><img src="\github_images\1543930988483.png" alt="1543930988483"></p>
+<p>12.修改好后，启动apache（/usr/local/apache2/bin/apachectl start）</p>
+<p>二.将源码放到网站中</p>
+<p>1.删除原来的网页(rm -rf /usr/local/apache2/htdocs/index.html)</p>
+<p><img src="\github_images\1543931301512.png" alt="1543931301512"></p>
+<p>2.将新的网页导入</p>
+<p>找到/usr/local/apache2/htdocs目录并拖拽进去</p>
+<p><img src="\github_images\1543931713501.png" alt="1543931713501"></p>
+<p>3.获取网页</p>
+<p><img src="\github_images\1543931816018.png" alt="1543931816018"></p>
+<p>4.关闭防火墙（systemctl stp firewalld）</p>
+<p><img src="\github_images\1543931897502.png" alt="1543931897502"></p>
+<p>5.更改虚拟机更改成桥接模式，在centos中输入ip addr即可查看ip，访问自己的主页</p>
+<p><img src="\github_images\1543932225994.png" alt="1543932225994"></p>
 
 					
 				</div>
@@ -204,13 +259,13 @@
 
 		<ul class="am-pagination">
     
-    	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/12/03/my-new-a-post/" title="my new a post">
-      		&laquo; 上一篇
+	
+		<li class="am-pagination-next">
+		<a class="pull-right" href="/2018/12/03/my-new-a-post/" title="my new a post">
+			下一篇 &raquo;
 		</a>
 		</li>
-	
-	
+	 
  </ul>
         
 
@@ -298,7 +353,7 @@
 				
 				
 				<!--toc(post.content)-->
-				<ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Quick-Start"><span class="post-toc-text">Quick Start</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Create-a-new-post"><span class="post-toc-text">Create a new post</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Run-server"><span class="post-toc-text">Run server</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generate-static-files"><span class="post-toc-text">Generate static files</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deploy-to-remote-sites"><span class="post-toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-yum系统的安装"><span class="post-toc-text">一.yum系统的安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-rpm系统的安装"><span class="post-toc-text">二.rpm系统的安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#rpm查询信息"><span class="post-toc-text">rpm查询信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#rpm安装软件"><span class="post-toc-text">rpm安装软件</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三-源码安装"><span class="post-toc-text">三.源码安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#configure"><span class="post-toc-text">./configure</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#make"><span class="post-toc-text">make</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#make-install"><span class="post-toc-text">make install</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#make-clean和make-uninstall"><span class="post-toc-text">make clean和make uninstall</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四-安装httpd步骤"><span class="post-toc-text">四.安装httpd步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#用ssh链接虚拟机"><span class="post-toc-text">用ssh链接虚拟机</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#向虚拟机中拷贝文件"><span class="post-toc-text">向虚拟机中拷贝文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#源码安装httpd"><span class="post-toc-text">源码安装httpd</span></a></li></ol></li></ol>
 			</nav>
 			<div class="post-toc-bar"><div>
 		</div></div></aside>
